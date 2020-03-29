@@ -1,4 +1,4 @@
-import { Decision } from '../decisions/decision.interface';
+import { Decision } from '../interfaces/decision';
 
 export class ApplyDecisionCommand {
   constructor(public decision: Decision) {}

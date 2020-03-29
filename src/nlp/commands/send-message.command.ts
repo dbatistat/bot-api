@@ -1,3 +1,5 @@
+import { Decision } from '../../decision-engine/interfaces/decision';
+
 export class SendMessageCommand {
-  constructor(public nlp: { intent: string }) {}
+  constructor(public decision: Decision) {}
 }

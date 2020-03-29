@@ -1,7 +1,4 @@
-import { Decision } from './decision.interface';
+import { AbstractDecision } from './abstract-decision';
 
-export class HelloDecision implements Decision {
-  async execute(): Promise<any> {
-    return Promise.resolve({ intent: 'greetings.answer.hello' });
-  }
+export class HelloDecision extends AbstractDecision {
 }

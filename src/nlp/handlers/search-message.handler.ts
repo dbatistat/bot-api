@@ -8,8 +8,10 @@ export class SearchMessageHandler
   implements ICommandHandler<ReceiveMessageCommand> {
   constructor(private readonly commandBus: CommandBus) {}
 
-  async execute(query: ReceiveMessageCommand): Promise<any> {
-    const nlp = await nlpManager.process('es', query.message);
-    return this.commandBus.execute(new SendMessageCommand(nlp));
+  async execute({ message }: ReceiveMessageCommand): Promise<any> {
+    const { intent } = await nlpManager.process('es', message.message);
+    return this.commandBus.execute(
+      new SendMessageCommand({ intent, userCode: message.userCode }),
+    );
   }
 }

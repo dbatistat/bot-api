@@ -8,10 +8,8 @@ export class ReceiveMessageHandler
   implements ICommandHandler<ReceiveMessageCommand> {
   constructor(private readonly commandBus: CommandBus) {}
 
-  async execute(query: ReceiveMessageCommand): Promise<any> {
+  async execute({ message }: ReceiveMessageCommand): Promise<any> {
     // Maybe this handler can validate the data
-    return this.commandBus.execute(
-      new SearchMessageCommand(query.message.toLowerCase()),
-    );
+    return this.commandBus.execute(new SearchMessageCommand(message));
   }
 }

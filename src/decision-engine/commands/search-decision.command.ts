@@ -1,3 +1,5 @@
+import { Decision } from '../interfaces/decision';
+
 export class SearchDecisionCommand {
-  constructor(public intent: string) {}
+  constructor(public decision: Decision) {}
 }

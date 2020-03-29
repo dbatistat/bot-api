@@ -1,3 +1,5 @@
+import { Decision } from '../interfaces/decision';
+
 export class ReceiveDecisionCommand {
-  constructor(public nlp: { intent: string }) {}
+  constructor(public decision: Decision) {}
 }

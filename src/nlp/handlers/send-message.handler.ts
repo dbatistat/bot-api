@@ -6,7 +6,7 @@ import { ReceiveDecisionCommand } from '../../decision-engine/commands/receive-d
 export class SendMessageHandler implements ICommandHandler<SendMessageCommand> {
   constructor(private readonly commandBus: CommandBus) {}
 
-  execute(query: SendMessageCommand): Promise<any> {
-    return this.commandBus.execute(new ReceiveDecisionCommand(query.nlp));
+  execute({ decision }: SendMessageCommand): Promise<any> {
+    return this.commandBus.execute(new ReceiveDecisionCommand(decision));
   }
 }

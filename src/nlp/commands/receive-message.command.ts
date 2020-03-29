@@ -1,3 +1,5 @@
+import { Message } from '../../messaging/interfaces/message.interface';
+
 export class ReceiveMessageCommand {
-  constructor(public message: string = '') {}
+  constructor(public message: Message) {}
 }

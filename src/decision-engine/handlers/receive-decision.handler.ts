@@ -8,6 +8,6 @@ export class ReceiveDecisionHandler
   constructor(private readonly commandBus: CommandBus) {}
 
   execute(query: ReceiveDecisionCommand): Promise<any> {
-    return this.commandBus.execute(new SearchDecisionCommand(query.nlp.intent));
+    return this.commandBus.execute(new SearchDecisionCommand(query.decision));
   }
 }
