@@ -402,3 +402,5 @@ ormconfig.json
 # Audit file required for daily log rotation (development only)
 # https://github.com/winstonjs/winston-daily-rotate-file
 debug-audit.json
+
+model.nlp
