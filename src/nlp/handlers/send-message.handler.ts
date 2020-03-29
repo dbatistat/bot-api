@@ -1,9 +1,9 @@
-import { CommandBus, CommandHandler, IQueryHandler } from '@nestjs/cqrs';
+import { CommandBus, CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { SendMessageCommand } from '../commands/send-message.command';
 import { ReceiveDecisionCommand } from '../../decision-engine/commands/receive-decision.command';
 
 @CommandHandler(SendMessageCommand)
-export class SendMessageHandler implements IQueryHandler<SendMessageCommand> {
+export class SendMessageHandler implements ICommandHandler<SendMessageCommand> {
   constructor(private readonly commandBus: CommandBus) {}
 
   execute(query: SendMessageCommand): Promise<any> {
